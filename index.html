@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="#">
+    <title>LinearA</title>
+
+    <script src="js/variables.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/actions.js"></script>
+</head>
+<body>
+<div id="controlsLayer">
+    <h2>LinearA</h2>
+    <label>
+        Ввод слова (по слогам через дефисы):
+        <input type="text" id="wordInput" value="SU-KI-RI-TA"/>
+    </label>
+    <button type="button" id="submitBtn" onclick="runSimulation()">
+        Обработать
+    </button>
+    <br/><br/>
+    <label id="stateLabel">Ожидание ввода...</label>
+</div>
+<hr/>
+<div id="resultsLayer"></div>
+</body>
+</html>

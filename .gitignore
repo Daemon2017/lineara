@@ -1,0 +1,7 @@
+.github/
+.ipynb_checkpoints/
+.idea/
+old/
+*.csv
+*.log
+*.json
