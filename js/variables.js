@@ -5,7 +5,7 @@ var CONFIG = {
         window.location.hostname === ''
     )
         ? 'http://localhost:8080'
-        : 'https://bbamf0mf8kfcd675bt1e.containers.yandexcloud.net',
+        : 'https://bbaetn00brra4ldbohrk.containers.yandexcloud.net',
 
     ENDPOINTS: {
         READINGS: '/readings'
