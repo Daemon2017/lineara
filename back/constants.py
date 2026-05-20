@@ -3,29 +3,21 @@ SIGN_TO_VOWEL = {
     "Ω": "ɔ", "O": "o", "U": "u"
 }
 
-SIGN_TO_PRE_PIE_STRESSED_CONSONANT = {
-    "P": "p’", "T": "t’", "K": "k’",
-               "D": "t’", "Q": "k’",
-}
-SIGN_TO_PRE_PIE_NON_STRESSED_CONSONANT = {
-    "P": "pʰ", "T": "tʰ", "K": "kʰ",
-               "D": "ɗ", "Q": "ɠ",
+SIGN_TO_SERIES = {
+    "P": "II", "T": "II", "K": "II", "Q": "II",
+    "D": "III",
+    "M": "SONORANT", "N": "SONORANT", "R": "SONORANT"
 }
 
-SIGN_TO_PG_STRESSED_CONSONANT = {
-    "P": "f", "T": "þ", "K": "h",
-              "D": "t", "Q": "k",
-}
-SIGN_TO_PG_NON_STRESSED_CONSONANT = {
-    "P": "b", "T": "d", "K": "g",
-              "D": "ð", "Q": "ɣ",
-}
-
-SIGN_TO_PIE_STRESSED_CONSONANT = {
-    "P": "p", "T": "t", "K": "k",
-              "D": "d", "Q": "g",
-}
-SIGN_TO_PIE_NON_STRESSED_CONSONANT = {
-    "P": "p", "T": "t", "K": "k",
-              "D": "t", "Q": "k",
+STAGES_RULES = {
+    "PRE_PIE": {
+        "STRONG": {
+            "II": {"P": "pʰ", "T": "tʰ", "K": "kʰ", "Q": "kʷʰ"},
+            "III": {"D": "d"}
+        },
+        "WEAK": {
+            "II": {"P": "b", "T": "d", "K": "g", "Q": "gʷ"},
+            "III": {"D": "ð"}
+        }
+    }
 }
