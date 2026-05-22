@@ -10,14 +10,14 @@ SIGN_TO_SERIES = {
 }
 
 STAGES_RULES = {
-    "PRE_PIE": {
+    "MINOAN": {
         "STRONG": {
             "II": {"P": "pʰ", "T": "tʰ", "K": "kʰ", "Q": "kʷʰ"},
             "III": {"D": "d"}
         },
         "WEAK": {
             "II": {"P": "b", "T": "d", "K": "g", "Q": "gʷ"},
-            "III": {"D": "ð"}
+            "III": {"D": "d"}
         }
     }
 }
