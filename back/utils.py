@@ -40,7 +40,7 @@ def transform_consonant_by_type(c, is_stressed, mode, v_mapped):
 
 
 def add_aspiration(c_mapped, lookup_c, mode):
-    if mode == "STRONG" and SIGN_TO_SERIES.get(lookup_c) == "II" and not c_mapped.endswith("ʰ"):
+    if mode == "STRONG" and SIGN_TO_SERIES.get(lookup_c) == "DYNAMIC" and not c_mapped.endswith("ʰ"):
         c_mapped += "ʰ"
     return c_mapped
 

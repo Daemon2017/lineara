@@ -4,20 +4,20 @@ SIGN_TO_VOWEL = {
 }
 
 SIGN_TO_SERIES = {
-    "P": "II", "T": "II", "K": "II", "Q": "II",
-    "D": "III",
+    "P": "DYNAMIC", "T": "DYNAMIC", "K": "DYNAMIC", "Q": "DYNAMIC",
+    "D": "STATIC",
     "M": "SONORANT", "N": "SONORANT", "R": "SONORANT"
 }
 
 STAGES_RULES = {
     "MINOAN": {
         "STRONG": {
-            "II": {"P": "pʰ", "T": "tʰ", "K": "kʰ", "Q": "kʷʰ"},
-            "III": {"D": "d"}
+            "DYNAMIC": {"P": "pʰ", "T": "tʰ", "K": "kʰ", "Q": "kʷʰ"},
+            "STATIC": {"D": "t'"}
         },
         "WEAK": {
-            "II": {"P": "b", "T": "d", "K": "g", "Q": "gʷ"},
-            "III": {"D": "d"}
+            "DYNAMIC": {"P": "b", "T": "d", "K": "g", "Q": "gʷ"},
+            "STATIC": {"D": "t'"}
         }
     }
 }
