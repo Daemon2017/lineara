@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="#">
-    <title>LinearA</title>
+    <title>Linear-A (Minoan)</title>
+    <link rel="stylesheet" type="text/css" href="css/controls.css"/>
 
     <script src="js/variables.js"></script>
     <script src="js/api.js"></script>
@@ -12,21 +13,105 @@
     <script src="js/actions.js"></script>
 </head>
 <body>
-<div id="controlsLayer">
-    <h2>LinearA</h2>
-    <label>
-        Ввод слова (по слогам через дефисы):
-        <input type="text" id="wordInput" value="SU-KI-RI-TA"/>
-    </label>
-    <button type="button" id="submitBtn" onclick="runSimulation()">
-        Обработать
-    </button>
-    <br/><br/>
-    <label id="stateLabel">
-        Ожидание ввода...
-    </label>
+
+<div class="container">
+    <div class="left-panel">
+        <h2>Linear-A (Minoan)</h2>
+        <div class="input-group">
+            <label for="wordInput">Ввод слова (по слогам через дефисы):</label>
+            <input type="text" id="wordInput" value="SU-KI-RI-TA"/>
+        </div>
+        <button type="button" id="submitBtn" onclick="runSimulation()">
+            Обработать
+        </button>
+        <span id="stateLabel">Ожидание ввода...</span>
+        <hr style="margin: 25px 0;"/>
+        <div id="resultsLayer"></div>
+    </div>
+
+    <div class="right-panel">
+        <h3>Справочник слогов</h3>
+
+        <div class="syllable-category">
+            <h4>1. Местоимения и личные показатели (Субъекты)</h4>
+            <div class="syllable-item"><span class="syllable-key">MI</span>
+                : 1-е лицо ед.ч. (Я) / праалтайский *bi (основа *m-)
+            </div>
+            <div class="syllable-item"><span class="syllable-key">ME/MI</span>
+                : 1-е лицо мн.ч. (Мы) / восточно-ностратический *-me/*-mi
+            </div>
+            <div class="syllable-item"><span class="syllable-key">TI</span>
+                : 2-е лицо ед.ч. (Ты) / индо-алтайский *-ti
+            </div>
+            <div class="syllable-item"><span class="syllable-key">TU</span>
+                : 2-е лицо ед.ч. (Ты) / праалтайский и ПИЕ *-tu
+            </div>
+            <div class="syllable-item"><span class="syllable-key">SI</span>
+                : 3-е лицо (Он/Тот) / праалтайский *-s- / ПИЕ *-s-
+            </div>
+            <div class="syllable-item"><span class="syllable-key">I / E</span>
+                : Указательный маркер (Этот) / ностратический *-i- / ПИЕ *-e-
+            </div>
+        </div>
+
+        <div class="syllable-category" style="margin-top: 20px;">
+            <h4>2. Падежи и локализация (Объект и Пространство)</h4>
+            <div class="syllable-item"><span class="syllable-key">M*</span>
+                : Аккузатив (Винительный падеж) / ностратический маркер объекта *-m-
+            </div>
+            <div class="syllable-item"><span class="syllable-key">NE</span>
+                : Родительный падеж / праалтайский *-ne / ПИЕ *-n
+            </div>
+            <div class="syllable-item"><span class="syllable-key">N*</span>
+                : Генитив (Родительный падеж) / праалтайский и ПИЕ маркер *-n-
+            </div>
+            <div class="syllable-item"><span class="syllable-key">K* / G*</span>
+                : Датив-Директив (Направление) / ностратический *-k-/*-g-
+            </div>
+            <div class="syllable-item"><span class="syllable-key">JA</span>
+                : Локатив (Место) / индо-алтайский суффикс пространства *-ja
+            </div>
+            <div class="syllable-item"><span class="syllable-key">TO</span>
+                : Аблатив (Исходный падеж) / индо-алтайский результативный маркер *-to
+            </div>
+            <div class="syllable-item"><span class="syllable-key">SA/SE</span>
+                : Партитив / индо-алтайский суффикс относительного признака *-sa/*-se
+            </div>
+        </div>
+
+        <div class="syllable-category" style="margin-top: 20px;">
+            <h4>3. Маркеры числа (Квантификаторы)</h4>
+            <div class="syllable-item"><span class="syllable-key">R*</span>
+                : Множественность / праалтайский маркер *-ŕ- / ностратический *-r
+            </div>
+            <div class="syllable-item"><span class="syllable-key">L*</span>
+                : Плюралис (Собирательное число) / ностратический маркер множественности *-l-
+            </div>
+            <div class="syllable-item"><span class="syllable-key">K* / T*</span>
+                : Плюралис именной / праалтайский коллективный суффикс *-k-/*-t-
+            </div>
+        </div>
+
+        <div class="syllable-category" style="margin-top: 20px;">
+            <h4>4. Глагольные показатели (Время, Вид, Залог)</h4>
+            <div class="syllable-item"><span class="syllable-key">TA</span>
+                : Результативный маркер (Пассив/Аорист) / индо-алтайский *-ta
+            </div>
+            <div class="syllable-item"><span class="syllable-key">TU</span>
+                : Имя состояния / номен действия / индо-алтайский результативный маркер *-tu
+            </div>
+            <div class="syllable-item"><span class="syllable-key">TI</span>
+                : Презенс/Актив / индо-алтайский глагольный показатель *-ti
+            </div>
+            <div class="syllable-item"><span class="syllable-key">B* / P*</span>
+                : Глагол действия / Каузатив / ностратический маркер бытия *-b-/*-p-
+            </div>
+            <div class="syllable-item"><span class="syllable-key">NU</span>
+                : Инхоатив (Начало действия) / медиальный глагольный маркер *-nu-
+            </div>
+        </div>
+    </div>
 </div>
-<hr/>
-<div id="resultsLayer"></div>
+
 </body>
 </html>
