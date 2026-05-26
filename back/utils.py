@@ -1,3 +1,4 @@
+import db
 from constants import SIGN_TO_VOWEL, SIGN_TO_SERIES, STAGES_RULES
 from variant import Variant
 
@@ -70,5 +71,6 @@ def generate_readings(word_hyphenated):
     variants = []
     for stressed_idx in range(num_syllables):
         minoan = get_reconstruction(syllables, stressed_idx)
-        variants.append(Variant(stressed_syllable_number=stressed_idx + 1, minoan=minoan))
+        cognates_from_db = db.search_eurasiatic_cognate(minoan)
+        variants.append(Variant(stressed_syllable_number=stressed_idx + 1, minoan=minoan, cognates=cognates_from_db))
     return variants

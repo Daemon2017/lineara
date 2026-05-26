@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from waitress import serve
 
+import db
 import utils
 
 app = Flask(__name__)
@@ -14,6 +15,11 @@ def get_readings():
     return jsonify(utils.generate_readings(word))
 
 
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    db.Session.remove()
+
+
 if __name__ == '__main__':
     print('LinearA ready!')
     try:
@@ -23,4 +29,5 @@ if __name__ == '__main__':
     except (KeyboardInterrupt, SystemExit):
         print("Stopping LinearA...")
     finally:
+        db.stop_pool()
         print('LinearA stopped.')
