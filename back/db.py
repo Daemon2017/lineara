@@ -18,7 +18,7 @@ def stop_pool():
 
 
 def search_eurasiatic_cognate(minoan_variant):
-    cleaned_word = minoan_variant.replace("ʰ", "").replace("̥", "").replace("'", "").lower().strip()
+    cleaned_word = minoan_variant.replace("ʷ", "").replace("ʰ", "").replace("̥", "").replace("'", "").lower().strip()
     if not cleaned_word:
         return []
     with Session() as session:
