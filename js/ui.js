@@ -19,14 +19,16 @@ function renderResults(data) {
             console.error("Ошибка парсинга когнатов: ", e);
         }
         if (cognatesList && cognatesList.length > 0) {
-            html += '  <div style="max-height: 200px; overflow-y: auto; border: 1px solid #edf2f7; border-radius: 6px; background: #f8fafc;">';
-            html += '    <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left;">';
-            html += '      <thead style="position: sticky; top: 0; background: #e2e8f0; color: #4a5568;">';
+            html += '  <div style="max-height: 350px; overflow-y: auto; overflow-x: auto; border: 1px solid #edf2f7; border-radius: 6px; background: #f8fafc;">';
+            html += '    <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; min-width: 800px;">';
+            html += '      <thead style="position: sticky; top: 0; background: #2c3e50; color: #ffffff; z-index: 10;">';
             html += '        <tr>';
-            html += '          <th style="padding: 8px 12px; font-weight: 600;">Праностратический</th>';
-            html += '          <th style="padding: 8px 12px; font-weight: 600;">Значение</th>';
-            html += '          <th style="padding: 8px 12px; font-weight: 600;">ПИЕ</th>';
-            html += '          <th style="padding: 8px 12px; font-weight: 600;">Праалтайский</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600;">Праностратический</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600;">Значение</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #1a5276;">Праиндоевропейский</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #21618c;">Значение</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #196f3d;">Праалтайский</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #1e8449;">Значение</th>';
             html += '        </tr>';
             html += '      </thead>';
             html += '      <tbody>';
@@ -34,10 +36,12 @@ function renderResults(data) {
                 var item = cognatesList[j];
                 var bg = j % 2 === 0 ? '#ffffff' : '#f1f5f9';
                 html += '      <tr style="background: ' + bg + '; border-bottom: 1px solid #edf2f7;">';
-                html += '        <td style="padding: 8px 12px; font-family: monospace; font-weight: bold; color: #0f172a;">' + (item.reconstruction || '—') + '</td>';
-                html += '        <td style="padding: 8px 12px; color: #334155; font-style: italic;">' + (item.meaning || '—') + '</td>';
-                html += '        <td style="padding: 8px 12px; color: #334155; font-style: italic;">' + (item.indoeuropean || '—') + '</td>';
-                html += '        <td style="padding: 8px 12px; color: #334155; font-style: italic;">' + (item.altaic || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #c0392b;">' + (item.eurasiatic || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; color: #334155; font-style: italic;">' + (item.eurasiatic_meaning || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #2980b9;">' + (item.indoeuropean || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; color: #2e4053;">' + (item.indoeuropean_meaning || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #27ae60;">' + (item.altaic || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; color: #1e8449;">' + (item.altaic_meaning || '—') + '</td>';
                 html += '      </tr>';
             }
             html += '      </tbody>';

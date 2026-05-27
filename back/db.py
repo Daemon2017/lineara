@@ -24,15 +24,26 @@ def search_eurasiatic_cognate(minoan_variant):
     with Session() as session:
         query = text(
             """
-            SELECT DISTINCT reconstruction, meaning, indoeuropean, altaic
+            SELECT DISTINCT 
+                eurasiatic, 
+                eurasiatic_meaning, 
+                indoeuropean, 
+                indoeuropean_meaning, 
+                altaic, 
+                altaic_meaning
             FROM dictionary
             WHERE variant = :variant
             """
         )
         result = session.execute(query, {"variant": cleaned_word})
         return [
-            {"reconstruction": row.reconstruction,
-             "meaning": row.meaning,
-             "indoeuropean": row.indoeuropean,
-             "altaic": row.altaic} for row in result
+            {
+                "eurasiatic": row.eurasiatic,
+                "eurasiatic_meaning": row.eurasiatic_meaning,
+                "indoeuropean": row.indoeuropean,
+                "indoeuropean_meaning": row.indoeuropean_meaning,
+                "altaic": row.altaic,
+                "altaic_meaning": row.altaic_meaning
+            }
+            for row in result
         ]
