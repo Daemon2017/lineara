@@ -1,6 +1,6 @@
 SIGN_TO_VOWEL = {
     "A": "a", "E": "e", "I": "i",
-    "Ω": "ɔ", "O": "o", "U": "u"
+    "O": "o", "U": "u"
 }
 
 SIGN_TO_SERIES = {
