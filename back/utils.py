@@ -19,15 +19,6 @@ def calculate_dynamic_mode(is_initial, is_stressed):
     return "STRONG" if is_initial or is_stressed else "WEAK"
 
 
-def transform_sonorant(c, is_stressed, v_mapped):
-    if is_stressed:
-        c_mapped = c.lower()
-    else:
-        c_mapped = c.lower() + "̥"
-        v_mapped = ""
-    return c_mapped, v_mapped
-
-
 def transform_consonant_by_type(c, is_stressed, mode, v_mapped):
     if c in SIGN_TO_SERIES:
         series = SIGN_TO_SERIES[c]
@@ -43,12 +34,6 @@ def transform_consonant_by_type(c, is_stressed, mode, v_mapped):
     return c_mapped, v_mapped
 
 
-def add_aspiration(c_mapped, lookup_c, mode):
-    if mode == "STRONG" and SIGN_TO_SERIES.get(lookup_c) == "DYNAMIC" and not c_mapped.endswith("ʰ"):
-        c_mapped += "ʰ"
-    return c_mapped
-
-
 def get_reconstruction(syllables, stressed_idx):
     parts = []
     for i, syl in enumerate(syllables):
@@ -61,7 +46,6 @@ def get_reconstruction(syllables, stressed_idx):
         is_stressed = (i == stressed_idx)
         mode = calculate_dynamic_mode(is_initial, is_stressed)
         c_mapped, v_mapped = transform_consonant_by_type(c, is_stressed, mode, v_mapped)
-        c_mapped = add_aspiration(c_mapped, c, mode)
         parts.append(c_mapped + v_mapped)
     return "".join(parts)
 
