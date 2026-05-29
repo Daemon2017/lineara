@@ -23,7 +23,7 @@ STAGES_RULES = {
     },
     "WEAK": {
         "DYNAMIC": {"P": "b", "T": "d", "K": "g"},
-        "STATIC": {"D": "t'", "Q": "k'"},
+        "STATIC": {"D": "t", "Q": "k"},
         "SONORANT": {"R": "r", "N": "n", "M": "m"},
         "SIBILANT": {"S": "s"},
         "AFFRICATE": {"Z": "z"},
