@@ -25,7 +25,8 @@ def transform_consonant_by_type(c, is_stressed, mode, v_mapped, drop_vowel=False
         if series == "SONORANT":
             c_mapped = STAGES_RULES[mode][series].get(c, c.lower())
             if not is_stressed:
-                c_mapped = c_mapped + "̥"
+                if c_mapped in ["r", "n", "m"]:
+                    c_mapped = c_mapped + "̥"
                 if drop_vowel:
                     v_mapped = ""
         else:

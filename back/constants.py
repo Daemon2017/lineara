@@ -16,7 +16,7 @@ STAGES_RULES = {
     "STRONG": {
         "DYNAMIC": {"P": "pʰ", "T": "tʰ", "K": "kʰ"},
         "STATIC": {"D": "t'", "Q": "k'"},
-        "SONORANT": {"R": "l", "N": "ŋ", "M": "b"},
+        "SONORANT": {"R": "l", "N": "ŋ", "M": "pʰ"},
         "SIBILANT": {"S": "c"},
         "AFFRICATE": {"Z": "č"},
         "GLIDE": {"W": "v"}
