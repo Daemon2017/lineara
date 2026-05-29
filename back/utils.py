@@ -32,9 +32,12 @@ def transform_consonant_by_type(c, is_stressed, mode, v_mapped):
     if c in SIGN_TO_SERIES:
         series = SIGN_TO_SERIES[c]
         if series == "SONORANT":
-            c_mapped, v_mapped = transform_sonorant(c, is_stressed, v_mapped)
+            c_mapped = STAGES_RULES[mode][series].get(c, c.lower())
+            if not is_stressed:
+                c_mapped = c_mapped + "̥"
+                v_mapped = ""
         else:
-            c_mapped = STAGES_RULES["MINOAN"][mode][series].get(c, c.lower())
+            c_mapped = STAGES_RULES[mode][series].get(c, c.lower())
     else:
         c_mapped = c.lower()
     return c_mapped, v_mapped

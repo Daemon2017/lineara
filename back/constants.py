@@ -10,14 +10,14 @@ SIGN_TO_SERIES = {
 }
 
 STAGES_RULES = {
-    "MINOAN": {
-        "STRONG": {
-            "DYNAMIC": {"P": "pʰ", "T": "tʰ", "K": "kʰ"},
-            "STATIC": {"D": "t'", "Q": "k'"}
-        },
-        "WEAK": {
-            "DYNAMIC": {"P": "b", "T": "d", "K": "g"},
-            "STATIC": {"D": "t'", "Q": "k'"}
-        }
+    "STRONG": {
+        "DYNAMIC": {"P": "pʰ", "T": "tʰ", "K": "kʰ"},
+        "STATIC": {"D": "t'", "Q": "k'"},
+        "SONORANT": {"R": "l", "N": "ŋ"}
+    },
+    "WEAK": {
+        "DYNAMIC": {"P": "b", "T": "d", "K": "g"},
+        "STATIC": {"D": "t'", "Q": "k'"},
+        "SONORANT": {"R": "r", "N": "n"}
     }
 }
