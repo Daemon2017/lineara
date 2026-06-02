@@ -6,27 +6,22 @@ SIGN_TO_VOWEL = {
 SIGN_TO_SERIES = {
     "P": "DYNAMIC", "T": "DYNAMIC", "K": "DYNAMIC",
     "D": "STATIC", "Q": "STATIC",
-    "M": "SONORANT", "N": "SONORANT", "R": "SONORANT",
-    "S": "SIBILANT",
-    "Z": "AFFRICATE",
-    "W": "GLIDE"
+    "M": "SONORANT", "N": "SONORANT",
+    "R": "SONORANT",
+    "S": "SIBILANT"
 }
 
 STAGES_RULES = {
     "STRONG": {
         "DYNAMIC": {"P": "pʰ", "T": "tʰ", "K": "kʰ"},
-        "STATIC": {"D": "t'", "Q": "k'"},
-        "SONORANT": {"R": "l", "N": "ŋ", "M": "pʰ"},
-        "SIBILANT": {"S": "c"},
-        "AFFRICATE": {"Z": "č"},
-        "GLIDE": {"W": "v"}
+        "STATIC": {"D": "ṭ", "Q": "ḳ"},
+        "SONORANT": {"R": "l"},
+        "SIBILANT": {"S": "s"}
     },
     "WEAK": {
         "DYNAMIC": {"P": "b", "T": "d", "K": "g"},
         "STATIC": {"D": "t", "Q": "k"},
-        "SONORANT": {"R": "r", "N": "n", "M": "m"},
-        "SIBILANT": {"S": "s"},
-        "AFFRICATE": {"Z": "z"},
-        "GLIDE": {"W": "w"}
+        "SONORANT": {"R": "r"},
+        "SIBILANT": {"S": "z"}
     }
 }

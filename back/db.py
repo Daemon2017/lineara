@@ -1,4 +1,5 @@
 import json
+import re
 
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, scoped_session
@@ -18,15 +19,13 @@ def stop_pool():
 
 
 def search_eurasiatic_cognate(minoan_variant):
-    cleaned_word = minoan_variant\
-        .replace("ʷ", "")\
-        .replace("ʰ", "")\
-        .replace("̥", "")\
-        .replace("'", "")\
-        .replace("̣", "")\
-        .lower().strip()
-    if not cleaned_word:
+    if not minoan_variant:
         return []
+    cleaned_word = minoan_variant \
+        .replace("ʰ", "") \
+        .replace("̥", "") \
+        .strip()
+    cleaned_word = re.sub(r'[aeiou]', 'V', cleaned_word)
     with Session() as session:
         query = text(
             """
@@ -42,14 +41,4 @@ def search_eurasiatic_cognate(minoan_variant):
             """
         )
         result = session.execute(query, {"variant": cleaned_word})
-        return [
-            {
-                "eurasiatic": row.eurasiatic,
-                "eurasiatic_meaning": row.eurasiatic_meaning,
-                "indoeuropean": row.indoeuropean,
-                "indoeuropean_meaning": row.indoeuropean_meaning,
-                "altaic": row.altaic,
-                "altaic_meaning": row.altaic_meaning
-            }
-            for row in result
-        ]
+        return [dict(row._mapping) for row in result]
