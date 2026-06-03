@@ -1,5 +1,6 @@
 SIGN_TO_VOWEL = {
-    "A": "a", "E": "e", "I": "i",
+    "A": "a",
+    "E": "e", "I": "i",
     "O": "o", "U": "u"
 }
 
@@ -21,6 +22,6 @@ STAGES_RULES = {
         "DYNAMIC": {"P": "b", "T": "d", "K": "g"},
         "STATIC": {"D": "t", "Q": "k"},
         "SONORANT": {"M": "m", "N": "n", "R": "r"},
-        "SIBILANT": {"S": "z", "Z": "ʒ"}
+        "SIBILANT": {"S": "z", "Z": "c"}
     }
 }
