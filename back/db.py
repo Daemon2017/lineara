@@ -25,7 +25,9 @@ def search_eurasiatic_cognate(minoan_variant):
         .replace("ʰ", "") \
         .replace("̥", "") \
         .strip()
-    cleaned_word = re.sub(r'[aeiou]', 'V', cleaned_word)
+    cleaned_word = re.sub(r'[uo]', 'U', cleaned_word)
+    cleaned_word = re.sub(r'[ei]', 'I', cleaned_word)
+    cleaned_word = re.sub(r'[a]', 'A', cleaned_word)
     with Session() as session:
         query = text(
             """
