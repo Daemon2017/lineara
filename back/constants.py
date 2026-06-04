@@ -1,14 +1,15 @@
 SIGN_TO_VOWEL = {
     "A": "a",
-    "E": "e", "I": "i",
-    "O": "o", "U": "u"
+    "I": "i", "E": "e",
+    "U": "u", "O": "o",
 }
 
 SIGN_TO_SERIES = {
+    "W": 'SEMIVOWEL', "J": 'SEMIVOWEL',
     "P": "DYNAMIC", "T": "DYNAMIC", "K": "DYNAMIC",
     "D": "STATIC", "Q": "STATIC",
     "M": "SONORANT", "N": "SONORANT", "R": "SONORANT",
-    "S": "SIBILANT", "Z": "SIBILANT"
+    "S": "SIBILANT", "Z": "SIBILANT",
 }
 
 STAGES_RULES = {
