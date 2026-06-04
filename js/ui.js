@@ -23,12 +23,8 @@ function renderResults(data) {
             html += '    <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; min-width: 800px;">';
             html += '      <thead style="position: sticky; top: 0; background: #2c3e50; color: #ffffff; z-index: 10;">';
             html += '        <tr>';
-            html += '          <th style="padding: 10px 12px; font-weight: 600;">Праностратический</th>';
+            html += '          <th style="padding: 10px 12px; font-weight: 600;">Реконструкция</th>';
             html += '          <th style="padding: 10px 12px; font-weight: 600;">Значение</th>';
-            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #1a5276;">Праиндоевропейский</th>';
-            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #21618c;">Значение</th>';
-            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #196f3d;">Праалтайский</th>';
-            html += '          <th style="padding: 10px 12px; font-weight: 600; background: #1e8449;">Значение</th>';
             html += '        </tr>';
             html += '      </thead>';
             html += '      <tbody>';
@@ -36,12 +32,8 @@ function renderResults(data) {
                 var item = cognatesList[j];
                 var bg = j % 2 === 0 ? '#ffffff' : '#f1f5f9';
                 html += '      <tr style="background: ' + bg + '; border-bottom: 1px solid #edf2f7;">';
-                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #c0392b;">' + (item.eurasiatic || '—') + '</td>';
-                html += '        <td style="padding: 10px 12px; color: #334155; font-style: italic;">' + (item.eurasiatic_meaning || '—') + '</td>';
-                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #2980b9;">' + (item.indoeuropean || '—') + '</td>';
-                html += '        <td style="padding: 10px 12px; color: #2e4053;">' + (item.indoeuropean_meaning || '—') + '</td>';
-                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #27ae60;">' + (item.altaic || '—') + '</td>';
-                html += '        <td style="padding: 10px 12px; color: #1e8449;">' + (item.altaic_meaning || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; font-family: monospace; font-weight: bold; color: #c0392b;">' + (item.reconstruction || '—') + '</td>';
+                html += '        <td style="padding: 10px 12px; color: #334155; font-style: italic;">' + (item.meaning || '—') + '</td>';
                 html += '      </tr>';
             }
             html += '      </tbody>';

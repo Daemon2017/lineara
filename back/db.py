@@ -25,19 +25,13 @@ def search_eurasiatic_cognate(minoan_variant):
         .replace("ʰ", "") \
         .replace("̥", "") \
         .strip()
-    cleaned_word = re.sub(r'[uo]', 'U', cleaned_word)
-    cleaned_word = re.sub(r'[ei]', 'I', cleaned_word)
-    cleaned_word = re.sub(r'[a]', 'A', cleaned_word)
+    cleaned_word = re.sub(r'[uoeia]', 'V', cleaned_word)
     with Session() as session:
         query = text(
             """
             SELECT DISTINCT 
-                eurasiatic, 
-                eurasiatic_meaning, 
-                indoeuropean, 
-                indoeuropean_meaning, 
-                altaic, 
-                altaic_meaning
+                reconstruction, 
+                meaning
             FROM dictionary
             WHERE variant = :variant
             """
